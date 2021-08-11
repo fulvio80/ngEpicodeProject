@@ -1,4 +1,6 @@
+import { FatturaService } from './../services/fattura.service';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-new-fattura-form',
@@ -7,9 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewFatturaFormComponent implements OnInit {
 
-  constructor() { }
+  fattura: any = { id: '', data: '', numero: '', anno: '', importo: '', stato: { id: '', nome: ''}}
+
+  constructor(
+    private fatturaService: FatturaService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  saveFattura() {
+    this.fatturaService.createFattura(this.fattura).subscribe(fattura => this.fattura=(fattura)
+    //(resp => console.log(resp)
+    );
+    this.router.navigate(['fatture'])
+
   }
 
 }

@@ -1,1 +1,30 @@
-<p>new-fattura-form works!</p>
+
+<h1>Nuova fattura</h1>
+
+<form>
+    
+    <div class="mb-3">
+      <label for="data" class="form-label">Data</label>
+      <input type="date" name="data" class="form-control" id="data" [(ngModel)]="fattura.data" >
+    </div>
+    <div class="mb-3">
+        <label for="numero" class="form-label">Numero</label>
+        <input type="text" name="numero" class="form-control" id="numero" [(ngModel)]="fattura.numero" >
+      </div>
+    <div class="mb-3">
+        <label for="anno" class="form-label">Anno</label>
+        <input type="text" name="anno" class="form-control" id="anno" [(ngModel)]="fattura.anno" >
+    </div>
+    <div class="mb-3">
+        <label for="importo" class="form-label">Importo</label>
+        <input type="text" name="importo" class="form-control" id="importo" [(ngModel)]="fattura.importo" >
+    </div>
+    <div class="mb-3">
+        <label for="stato" class="form-label">Stato</label>
+        <input type="text" name="stato" class="form-control" id="stato" [(ngModel)]="fattura.stato.nome" >
+      </div>
+
+      <button type="submit" class="btn btn-secondary bt-sm" (click)="saveFattura()" >Save</button>
+
+
+</form>

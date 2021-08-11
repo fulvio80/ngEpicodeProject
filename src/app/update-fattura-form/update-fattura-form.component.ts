@@ -1,5 +1,6 @@
+import { FatturaService } from './../services/fattura.service';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-update-fattura-form',
@@ -8,11 +9,29 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class UpdateFatturaFormComponent implements OnInit {
 
+  fattura: any;
+
   constructor(
+
+    private fatturaService: FatturaService,
+
+    private router: Router,
+
     private route: ActivatedRoute
   ) { }
 
   ngOnInit(): void {
+    this.route.params.subscribe(params => 
+      this.fatturaService.getFattura(params.id)
+      .subscribe(fattura => this.fattura = fattura)
+      )
+  }
+
+  saveFattura() {
+    this.fatturaService.updateFattura(this.fattura)
+    .subscribe(fattura => this.fattura = fattura);
+    this.router.navigate(['fatture'])
+
   }
 
 }

@@ -30,12 +30,22 @@ export class ClienteService {
     } 
 
     getCliente(id: number) {
-      return this.http.get(environment.urlAPI + '/api/clienti/,ASC' +id, {headers: this.headers} )
+      return this.http.get(environment.urlAPI + '/api/clienti/' +id, {headers: this.headers} )
 
     }
 
     deleteCliente(id: number) {
-      return this.http.delete(environment.urlAPI + '/api/clienti/,ASC' +id, {headers: this.headers} )
+      return this.http.delete(environment.urlAPI + '/api/clienti/' +id, {headers: this.headers} )
+
+    }
+    updateCliente(cliente: any) {
+      return this.http.put(environment.urlAPI + '/api/clienti/' +cliente.id, cliente, {headers: this.headers} )
+
+    }
+
+    createCliente(cliente: any) {
+
+      return this.http.post(environment.urlAPI + '/api/clienti/', cliente, {headers: this.headers} );
 
     }
 

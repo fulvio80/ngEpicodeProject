@@ -1,6 +1,6 @@
 import { ClienteService } from './../services/cliente.service';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-update-cliente-form',
@@ -9,16 +9,24 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class UpdateClienteFormComponent implements OnInit {
 
+  cliente: any;
+
   constructor(
     private route: ActivatedRoute,
-    private clienteService: ClienteService
+    private clienteService: ClienteService,
+    private router: Router
     ) { }
 
   ngOnInit(): void {
-    this.route.params.subscribe(resp =>
-      this.clienteService.getCliente(resp.id).subscribe(cliente => console.log(cliente))
+    this.route.params.subscribe(params =>
+      this.clienteService.getCliente(params.id).subscribe(cliente => this.cliente =cliente)
 
        )
+  }
+
+  saveCliente() {
+    this.clienteService.updateCliente(this.cliente).subscribe(cliente => this.cliente=(cliente) );
+    this.router.navigate(['clienti'])
   }
 
 }
