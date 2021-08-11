@@ -49,5 +49,20 @@ export class ClienteService {
 
     }
 
+    //cancella metodo per comune
+    updateComune(comune: any) {
+      return this.http.put(environment.urlAPI + '/api/comuni/' +comune.id, comune, {headers: this.headers} )
+  
+    }
+
+    getTipoCliente() {
+     return this.http.get<any>(environment.urlAPI + '/api/clienti/tipicliente', {headers: this.headers} )
+
+    }
+
+    getComuni() {
+      return this.http.get<any>(environment.urlAPI + '/api/comuni?page=0&size=20&sort=id,ASC', {headers: this.headers} )
+    }
+
  
 }

@@ -1,5 +1,5 @@
 <h1>Nuovo Cliente</h1>
-
+{{cliente | json}}
 <form>
     
     <div class="mb-3">
@@ -10,10 +10,20 @@
         <label for="partitaIva" class="form-label">Partita Iva</label>
         <input type="text" name="partitaIva" class="form-control" id="partitaIva" [(ngModel)]="cliente.partitaIva" >
       </div>
+
+
+      <div class="mb-3">
+        <label for="tipoCliente" class="form-label">Tipo cliente</label>
+        <select class="browser-default custom-select">
+          <option selected *ngFor="let item of tipocliente">{{item}}</option>
+        </select>
+      </div>
+      <!--
       <div class="mb-3">
         <label for="tipoCliente" class="form-label">Tipo cliente</label>
         <input type="text" name="tipoCliente" class="form-control" id="tipoCliente" [(ngModel)]="cliente.tipoCliente" >
       </div>
+    -->
       <div class="mb-3">
         <label for="email" class="form-label">Email</label>
         <input type="email" name="email" class="form-control" id="email" [(ngModel)]="cliente.email" >
@@ -51,9 +61,10 @@
         
       </div>
 
+
       <div class="mb-3">
-        <label for="via" class="form-label">Via</label>
-        <input type="text" name="via" class="form-control" id="via" [(ngModel)]="cliente.indirizzoSedeOperativa.via" >
+        <label for="strada" class="form-label">Via</label>
+        <input type="text" name="strada" class="form-control" id="strada" [(ngModel)]="cliente.indirizzoSedeOperativa.via" >
       </div>
       <div class="mb-3">
         <label for="civico" class="form-label">Civico</label>
@@ -67,10 +78,34 @@
         <label for="localita" class="form-label">Località</label>
         <input type="text" name="localita" class="form-control" id="localita" [(ngModel)]="cliente.indirizzoSedeOperativa.localita" >
       </div>
-      <div class="mb-3">
+
+
+    <!-- <div class="mb-3">
         <label for="comune" class="form-label">Comune</label>
         <input type="text" name="comune" class="form-control" id="comune" [(ngModel)]="cliente.indirizzoSedeOperativa.comune.nome" >
+      </div> -->
+
+      <!--
+      <div class="mb-3">
+        <label for="localita" class="form-label">Comune</label>
+
+      <select class="browser-default custom-select">
+        <option selected *ngFor="let item of comune.content">{{item.nome}}</option>
+      
+
+      </select>
       </div>
+    -->
+    <div class="mb-3">
+      <label for="comune" class="form-label">Comune</label>
+      <select class="browser-default costum select" [(ngModel)]="cliente.indirizzoSedeOperativa.comune">
+        <option selected *ngFor="let item of comune.content" [ngValue]="item">{{item.nome}}</option>
+      </select>
+
+    </div>
+
+
+      <!---->
       <div class="mb-3">
         <label for="provincia" class="form-label">Provincia</label>
         <input type="text" name="provincia" class="form-control" id="provincia" [(ngModel)]="cliente.indirizzoSedeOperativa.comune.provincia.nome" >
@@ -83,8 +118,8 @@
         
       </div>
       <div class="mb-3">
-        <label for="via" class="form-label">Via</label>
-        <input type="text" name="via" class="form-control" id="via" [(ngModel)]="cliente.indirizzoSedeLegale.via" >
+        <label for="street" class="form-label">Via</label>
+        <input type="text" name="street" class="form-control" id="street" [(ngModel)]="cliente.indirizzoSedeLegale.via" >
       </div>
       <div class="mb-3">
         <label for="civico" class="form-label">Civico</label>
@@ -123,16 +158,17 @@
       </div>
       <div class="mb-3">
         <label for="dataUltimoContatto" class="form-label">Data ultimo contatto</label>
-        <input type="text" name="dataUltimoContatto" class="form-control" id="dataUltimoContatto" [(ngModel)]="cliente.dataUltimoContatto" >
+   <input type="text" name="dataUltimoContatto" class="form-control" id="dataUltimoContatto" [(ngModel)]="cliente.dataUltimoContatto" >
+
       </div>
       <div class="mb-3">
         <label for="fatturatoAnnuale" class="form-label">Fatturato Annuale</label>
-        <input type="text" name="fatturatoAnnuale" class="form-control" id="fatturatoAnnuale" [(ngModel)]="cliente.fatturatoAnnuale" >
+    <input type="text" name="fatturatoAnnuale" class="form-control" id="fatturatoAnnuale" [(ngModel)]="cliente.fatturatoAnnuale">
       </div>
 
 
 
 
     
-    <button type="submit" class="btn btn-info bt-sm" (click)="saveCliente()" >Save</button>
+    <button type="submit" class="btn btn-secondary bt-sm" (click)="saveCliente()" >Save</button>
   </form>

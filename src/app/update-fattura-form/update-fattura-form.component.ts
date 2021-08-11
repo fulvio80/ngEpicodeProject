@@ -11,6 +11,8 @@ export class UpdateFatturaFormComponent implements OnInit {
 
   fattura: any;
 
+  fatture: any;
+
   constructor(
 
     private fatturaService: FatturaService,
@@ -24,7 +26,8 @@ export class UpdateFatturaFormComponent implements OnInit {
     this.route.params.subscribe(params => 
       this.fatturaService.getFattura(params.id)
       .subscribe(fattura => this.fattura = fattura)
-      )
+      );
+      this.fatturaService.getFatture().subscribe(data => this.fatture = data)
   }
 
   saveFattura() {
@@ -33,5 +36,7 @@ export class UpdateFatturaFormComponent implements OnInit {
     this.router.navigate(['fatture'])
 
   }
+
+
 
 }

@@ -21,7 +21,13 @@
     </div>
     <div class="mb-3">
         <label for="stato" class="form-label">Stato</label>
-        <input type="text" name="stato" class="form-control" id="stato" [(ngModel)]="fattura.stato.nome" >
+  <!--  <input type="text" name="stato" class="form-control" id="stato" [(ngModel)]="fattura.stato.nome" > -->
+
+{{fatture | json}}
+
+  <select class="browser-default custom-select">
+  <option selected *ngFor="let item of fatture.content">{{item.nome}}</option>
+  </select>
       </div>
 
       <button type="submit" class="btn btn-secondary bt-sm" (click)="saveFattura()" >Save</button>

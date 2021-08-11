@@ -15,7 +15,13 @@ export class NewClienteFormComponent implements OnInit {
   provincia: { id: '', nome: '', sigla: '' } } }, 
   indirizzoSedeLegale: { id: '', via: '', civico: '', cap: '', localita: '', 
   comune: { id: '', nome: '', provincia: { id: '', nome: '', sigla: '' } } }, 
-  dataInserimento: '', dataUltimoContatto: '', fatturatoAnnuale: '' }
+  dataInserimento: '', dataUltimoContatto: '', fatturatoAnnuale: '' };
+
+  comune: any = { comune:  { nome: '',
+      }
+  }
+
+  tipocliente: any;
 /*
   obj = {
     ragioneSociale: "Bruno-Romano SPA - TEST",
@@ -65,12 +71,25 @@ export class NewClienteFormComponent implements OnInit {
 
 */
 
+/*
+comune: any = {
+   
+  comune: {nome: '', }
+    }
+
+    */
+  
+
+
+
   constructor(
     private clienteService: ClienteService,
     private router: Router
   ) { }
 
   ngOnInit(): void {
+    this.clienteService.getComuni().subscribe(comune => this.comune = comune);
+       this.clienteService.getTipoCliente().subscribe(response => this.tipocliente=response)
   }
 
   saveCliente() {

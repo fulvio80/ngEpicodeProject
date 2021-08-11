@@ -42,4 +42,8 @@ export class FatturaService {
      return this.http.post(environment.urlAPI + '/api/fatture/', fattura, {headers: this.headers} )
 
    }
+
+   getFatture() {
+     return this.http.get<any>(environment.urlAPI + '/api/statifattura?page=0&size=20&sort=id,ASC', {headers: this.headers} )
+   }
 }
