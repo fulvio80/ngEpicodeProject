@@ -15,6 +15,7 @@ import { TableFattureComponent } from './table-fatture/table-fatture.component';
 import { NewFatturaFormComponent } from './new-fattura-form/new-fattura-form.component';
 import { UpdateFatturaFormComponent } from './update-fattura-form/update-fattura-form.component';
 import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { LoginComponent } from './login/login.component';
     TableFattureComponent,
     NewFatturaFormComponent,
     UpdateFatturaFormComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

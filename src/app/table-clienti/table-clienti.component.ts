@@ -22,7 +22,6 @@ export class TableClientiComponent implements OnInit {
 
     removeCliente(item: any) {
       this.clienteService.deleteCliente(item.id).subscribe(resp => console.log(resp));
-      //this.clienti = this.clienti.filter((cliente: { id: any}) => cliente.id !== item.id)
     }
 
     updateCliente(item: any) {

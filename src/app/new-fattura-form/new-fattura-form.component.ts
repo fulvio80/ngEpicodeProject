@@ -9,7 +9,9 @@ import { Router } from '@angular/router';
 })
 export class NewFatturaFormComponent implements OnInit {
 
-  fattura: any = { id: '', data: '', numero: '', anno: '', importo: '', stato: { id: '', nome: ''}}
+  fattura: any = { id: '', data: '', numero: '', anno: '', importo: '', stato: { id: '', nome: ''}};
+
+  fatture: any =  { id: '', data: '', numero: '', anno: '', importo: '', stato: { id: '', nome: ''}};
 
   constructor(
     private fatturaService: FatturaService,
@@ -17,11 +19,12 @@ export class NewFatturaFormComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.fatturaService.getFatture().subscribe(data => this.fatture = data)
   }
 
   saveFattura() {
     this.fatturaService.createFattura(this.fattura).subscribe(fattura => this.fattura=(fattura)
-    //(resp => console.log(resp)
+
     );
     this.router.navigate(['fatture'])
 

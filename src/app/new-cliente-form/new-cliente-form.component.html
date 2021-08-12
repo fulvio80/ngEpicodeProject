@@ -1,5 +1,5 @@
-<h1>Nuovo Cliente</h1>
-{{cliente | json}}
+<h3>Nuovo Cliente</h3>
+
 <form>
     
     <div class="mb-3">
@@ -18,12 +18,7 @@
           <option selected *ngFor="let item of tipocliente">{{item}}</option>
         </select>
       </div>
-      <!--
-      <div class="mb-3">
-        <label for="tipoCliente" class="form-label">Tipo cliente</label>
-        <input type="text" name="tipoCliente" class="form-control" id="tipoCliente" [(ngModel)]="cliente.tipoCliente" >
-      </div>
-    -->
+      
       <div class="mb-3">
         <label for="email" class="form-label">Email</label>
         <input type="email" name="email" class="form-control" id="email" [(ngModel)]="cliente.email" >
@@ -53,7 +48,7 @@
         <input type="email" name="emailContatto" class="form-control" id="emailContatto" [(ngModel)]="cliente.emailContatto" >
       </div>
 
-      <!--Indirizzo sede operativa-->
+     
 
 
       <div class="mb-3">
@@ -80,24 +75,10 @@
       </div>
 
 
-    <!-- <div class="mb-3">
-        <label for="comune" class="form-label">Comune</label>
-        <input type="text" name="comune" class="form-control" id="comune" [(ngModel)]="cliente.indirizzoSedeOperativa.comune.nome" >
-      </div> -->
-
-      <!--
-      <div class="mb-3">
-        <label for="localita" class="form-label">Comune</label>
-
-      <select class="browser-default custom-select">
-        <option selected *ngFor="let item of comune.content">{{item.nome}}</option>
-      
-
-      </select>
-      </div>
-    -->
+ 
     <div class="mb-3">
       <label for="comune" class="form-label">Comune</label>
+      <br>
       <select class="browser-default costum select" [(ngModel)]="cliente.indirizzoSedeOperativa.comune">
         <option selected *ngFor="let item of comune.content" [ngValue]="item">{{item.nome}}</option>
       </select>
@@ -105,14 +86,7 @@
     </div>
 
 
-      <!---->
-      <div class="mb-3">
-        <label for="provincia" class="form-label">Provincia</label>
-        <input type="text" name="provincia" class="form-control" id="provincia" [(ngModel)]="cliente.indirizzoSedeOperativa.comune.provincia.nome" >
-      </div>
-      
-
-      <!--indirizzo sede legale-->
+     
       <div class="mb-3">
         <label for="indirizzoSedeLegale" class="form-label"><b>Indirizzo Sede Legale</b></label>
         
@@ -143,7 +117,7 @@
       </div>
       
 
-      <!--Date e fatturato-->
+    
 
    
 

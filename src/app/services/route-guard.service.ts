@@ -17,8 +17,7 @@ export class RouteGuardService implements CanActivate {
   }
 
   loginApp(email: string, password: string) {
-    //chiamata al server, farsi passare l'osservable dal service 
-    //intanto una simulazione
+   
     if(email === 'admin@admin.com' && password === '12345') {
       this.login = true;
     } else {

@@ -1,3 +1,4 @@
+import { RegisterComponent } from './register/register.component';
 import { NewFatturaFormComponent } from './new-fattura-form/new-fattura-form.component';
 import { LoginComponent } from './login/login.component';
 import { RouteGuardService } from './services/route-guard.service';
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'fatture', component: TableFattureComponent },
   { path: 'fatture/:id/edit', component: UpdateFatturaFormComponent },
   { path: 'fatture/new', component: NewFatturaFormComponent },
+  { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
 ];
 

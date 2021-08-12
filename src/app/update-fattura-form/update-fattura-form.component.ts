@@ -27,7 +27,7 @@ export class UpdateFatturaFormComponent implements OnInit {
       this.fatturaService.getFattura(params.id)
       .subscribe(fattura => this.fattura = fattura)
       );
-      this.fatturaService.getFatture().subscribe(data => this.fatture = data)
+      this.fatturaService.getFatture().subscribe(data => this.fatture = data) 
   }
 
   saveFattura() {

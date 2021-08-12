@@ -1,0 +1,31 @@
+<form>
+    <div class="container">
+        <div class="row">
+            <div class="mb-3">
+                <label for="nome" class="form-label">Nome</label>
+                <input type="text" name="nome" class="form-control" id="nome" [(ngModel)]="user.nome">
+            </div>
+            <div class="mb-3">
+                <label for="cognome" class="form-label">Cognome</label>
+                <input type="text" name="cognome" class="form-control" id="cognome" [(ngModel)]="user.cognome">
+            </div>
+            <div class="mb-3">
+                <label for="usernawe" class="form-label">Username</label>
+                <input type="text" name="username" class="form-control" id="username"
+                    [(ngModel)]="user.username">
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" name="email" class="form-control" id="email" [(ngModel)]="user.email">
+            </div>
+            <div class="mb-3">
+                <label for="password" class="password">Password</label>
+                <input type="password" name="password" class="form-control" id="password" [(ngModel)]="user.password">
+            </div>
+
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-secondary bt-sm" (click)="saveUser()">Save</button>
+
+</form>

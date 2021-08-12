@@ -49,9 +49,5 @@ export class UpdateClienteFormComponent implements OnInit {
     this.router.navigate(['clienti'])
   }
 
-  /*
-  saveComune() {
-    this.localitaService.updateComune(this.comune).subscribe(comune => this.comune=(comune))
-  }
-  */
+  
 }
