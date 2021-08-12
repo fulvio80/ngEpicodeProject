@@ -1,3 +1,4 @@
+import { ClienteService } from './../services/cliente.service';
 import { RouteGuardService } from './../services/route-guard.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
@@ -9,22 +10,30 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  email = '';
-  password= '';
+
+  login: any = {
+  username: '',
+  password: '',
+  }
 
 
   constructor(
     private routeGuardService: RouteGuardService,
     private router: Router,
+    private clienteService: ClienteService
   ) { }
 
   ngOnInit(): void {
   }
 
   loginUser() {
-    //alert(this.email + ' ' + this.password);
-    this.routeGuardService.loginApp(this.email, this.password);
-    this.router.navigate(['/clienti'])
-  }
+    this.clienteService.loginSend(this.login).subscribe(resp =>{
+      console.log(resp)
+      this.routeGuardService.loginApp(resp);
+      this.router.navigate(['/clienti'])
+    })}
+  
+   
+  
 
 }

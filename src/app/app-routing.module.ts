@@ -11,12 +11,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { UpdateFatturaFormComponent } from './update-fattura-form/update-fattura-form.component';
 
 const routes: Routes = [
-  { path: 'clienti', component: TableClientiComponent },
-  { path: 'clienti/:id/edit', component: UpdateClienteFormComponent },
-  { path: 'clienti/new', component: NewClienteFormComponent },
-  { path: 'fatture', component: TableFattureComponent },
-  { path: 'fatture/:id/edit', component: UpdateFatturaFormComponent },
-  { path: 'fatture/new', component: NewFatturaFormComponent },
+  { path: 'clienti', component: TableClientiComponent, canActivate: [RouteGuardService] },
+  { path: 'clienti/:id/edit', component: UpdateClienteFormComponent, canActivate: [RouteGuardService] },
+  { path: 'clienti/new', component: NewClienteFormComponent, canActivate: [RouteGuardService] },
+  { path: 'fatture', component: TableFattureComponent, canActivate: [RouteGuardService] },
+  { path: 'fatture/:id/edit', component: UpdateFatturaFormComponent, canActivate: [RouteGuardService] },
+  { path: 'fatture/new', component: NewFatturaFormComponent, canActivate: [RouteGuardService] },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
 ];
@@ -25,4 +25,6 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule { 
+  
+}

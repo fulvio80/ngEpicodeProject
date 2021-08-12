@@ -69,5 +69,9 @@ export class ClienteService {
 
     }
 
+    loginSend(login: any) {
+      return this.http.post(environment.urlAPI + '/api/auth/login', login, {headers: this.headers} )
+    }
+
  
 }

@@ -16,15 +16,17 @@ export class RouteGuardService implements CanActivate {
     return this.login;
   }
 
-  loginApp(email: string, password: string) {
+  loginApp(login: any) {
    
-    if(email === 'admin@admin.com' && password === '12345') {
+    if (login) {
       this.login = true;
+
     } else {
-      alert('Email|Password errate!')
+      alert('Password errata!')
+    }
 
     }
     
     
   }
-}
+
