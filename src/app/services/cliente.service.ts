@@ -30,28 +30,28 @@ export class ClienteService {
     } 
 
     getCliente(id: number) {
-      return this.http.get(environment.urlAPI + '/api/clienti/' +id, {headers: this.headers} )
+      return this.http.get<any>(environment.urlAPI + '/api/clienti/' +id, {headers: this.headers} )
 
     }
 
     deleteCliente(id: number) {
-      return this.http.delete(environment.urlAPI + '/api/clienti/' +id, {headers: this.headers} )
+      return this.http.delete<any>(environment.urlAPI + '/api/clienti/' +id, {headers: this.headers} )
 
     }
     updateCliente(cliente: any) {
-      return this.http.put(environment.urlAPI + '/api/clienti/' +cliente.id, cliente, {headers: this.headers} )
+      return this.http.put<any>(environment.urlAPI + '/api/clienti/' +cliente.id, cliente, {headers: this.headers} )
 
     }
 
     createCliente(cliente: any) {
 
-      return this.http.post(environment.urlAPI + '/api/clienti/', cliente, {headers: this.headers} );
+      return this.http.post<any>(environment.urlAPI + '/api/clienti/', cliente, {headers: this.headers} );
 
     }
 
    
     updateComune(comune: any) {
-      return this.http.put(environment.urlAPI + '/api/comuni/' +comune.id, comune, {headers: this.headers} )
+      return this.http.put<any>(environment.urlAPI + '/api/comuni/' +comune.id, comune, {headers: this.headers} )
   
     }
 
@@ -65,12 +65,12 @@ export class ClienteService {
     }
 
     postUser(user: any) {
-      return this.http.post(environment.urlAPI + '/api/auth/signup', user, {headers: this.headers})
+      return this.http.post<any>(environment.urlAPI + '/api/auth/signup', user, {headers: this.headers})
 
     }
 
     loginSend(login: any) {
-      return this.http.post(environment.urlAPI + '/api/auth/login', login, {headers: this.headers} )
+      return this.http.post<any>(environment.urlAPI + '/api/auth/login', login, {headers: this.headers} )
     }
 
  

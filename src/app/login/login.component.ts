@@ -26,9 +26,8 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  loginUser() {
-    this.clienteService.loginSend(this.login).subscribe(resp =>{
-      console.log(resp)
+  loginUtente() {
+    this.clienteService.loginSend(this.login).subscribe(resp =>{ console.log(resp)
       this.routeGuardService.loginApp(resp);
       this.router.navigate(['/clienti'])
     })}

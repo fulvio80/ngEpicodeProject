@@ -17,12 +17,19 @@ export class TableClientiComponent implements OnInit {
     ) { }
 
     ngOnInit(): void {
-      this.clienteService.getAllClienti().subscribe(resp => this.clienti = resp);
+      this.clienteService.getAllClienti().subscribe(resp =>  this.clienti = resp );
+
     }
 
+    
+
+    
+
+    
     removeCliente(item: any) {
-      this.clienteService.deleteCliente(item.id).subscribe(resp => console.log(resp));
+      this.clienteService.deleteCliente(item.id).subscribe(resp => this.clienteService.getAllClienti().subscribe(resp => this.clienti = resp ) );
     }
+    
 
     updateCliente(item: any) {
       this.router.navigate(['clienti', item.id, 'edit'])

@@ -26,7 +26,12 @@ export class RouteGuardService implements CanActivate {
     }
 
     }
+
+    logoutApp() {
+      this.login = false;
+
+    }
     
     
-  }
+}
 

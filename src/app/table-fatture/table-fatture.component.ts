@@ -24,7 +24,7 @@ export class TableFattureComponent implements OnInit {
   }
 
   removeFattura(item: any) {
-    this.fatturaService.deleteFattura(item.id).subscribe(resp => console.log(resp))
+    this.fatturaService.deleteFattura(item.id).subscribe(resp => this.fatturaService.getAllFatture().subscribe(resp => this.fatture = resp))
     
   }
 

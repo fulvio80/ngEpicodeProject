@@ -19,6 +19,10 @@ const routes: Routes = [
   { path: 'fatture/new', component: NewFatturaFormComponent, canActivate: [RouteGuardService] },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
+  { path: '',
+  redirectTo: 'login',
+  pathMatch: 'full'
+}
 ];
 
 @NgModule({
