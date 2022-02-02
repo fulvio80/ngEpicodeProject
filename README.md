@@ -1,3 +1,7 @@
+#About
+
+Final project Epicode Bootcamp 13/08/2021. Enterprise dashboard developed with Angular12. Rest API, user CRUD, and invoice CRUD complete and working. Login page and route protection implemented.
+
 # AppFrontend
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.2.
